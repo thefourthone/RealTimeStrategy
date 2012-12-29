@@ -38,6 +38,9 @@ public class MainBrowser extends JPanel implements MouseListener, KeyListener, M
 		new MainBrowser().setUpFrame();
 		
 	}
+	/**
+	 * The method called to set up the gui
+	 */
 	public void setUpFrame()
 	{
 		main = new JFrame();
@@ -64,31 +67,16 @@ public class MainBrowser extends JPanel implements MouseListener, KeyListener, M
 		saveWindow.setSize(400, 75);
 		saveWindow.setVisible(true);
 	}
+	
+	/**
+	 * 
+	 */
 	public void startSave()
 	{
 		String name = input.getText()+".map";
-		Boolean thereisaFile = false;
-		File dir = new File(".");
-		  File[] listOfFiles = dir.listFiles(); 
-		  String filename;
-		 // System.out.println(listOfFiles.length);
-		  for (int i = 0; i < listOfFiles.length; i++) 
-		  {
-		 
-		   if (listOfFiles[i].isFile()) 
-		   {
-		   filename = listOfFiles[i].getName();
-		       if (filename==name)
-		       {
-		          thereisaFile = true;
-		       } 
-		   }
-		  }
-		  if(thereisaFile)
-		  SaveMap(name, map);
+		saveMap(name, map);
 	}
-	public void SaveMap(String name, Map map)
-	
+	public void saveMap(String name, Map map)
 	{
 		
 		
